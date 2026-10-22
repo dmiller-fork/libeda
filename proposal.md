@@ -19,8 +19,17 @@ Need at least six quality indicators
     - length of shortest independent claim
     - whether appealed
 
-# Next actions:
-	- create libeda.py
-	- create tests/
+# Requirements
+	- create libeda.py (DONE)
+	- create tests/ (DONE)
 	- create eda.py has following api: <dataset> <column> <stat>.
-	- create repo	
+	- create repo (DONE)
+	- write some code to list the available datasets (DONE)
+	- write transforms to stage 3 main datasets: 
+		- stg_claimstats.py
+		- stg_citations.py
+		- stg_appdata.py
+	- write transforms to create derived columns, with APP_ID as primary key:
+		- min_claim_length.py and csv (NOTE BAD DATA because PGPUB, not final)
+		- citation_count.py and csv
+		- days_to_disposal.py and csv
