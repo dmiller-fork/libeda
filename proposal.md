@@ -26,10 +26,10 @@ Need at least six quality indicators
 	- create repo (DONE)
 	- write some code to list the available datasets (DONE)
 	- write transforms to stage 3 main datasets: 
-		- stg_claimstats.py
-		- stg_citations.py
-		- stg_appdata.py
+		- stg_claimstats.py (DONE),NOTE BAD DATA because PGPUB
+		- stg_citations.py (DONE)
+		- stg_appdata.py (DONE)
 	- write transforms to create derived columns, with APP_ID as primary key:
-		- min_claim_length.py and csv (NOTE BAD DATA because PGPUB, not final)
-		- citation_count.py and csv
-		- days_to_disposal.py and csv
+		- int_primaryindependent_claimstats.py  (DONE)
+		- int_count_citations.py  (DONE)
+		- int_daystodisposal_appdata.py 
