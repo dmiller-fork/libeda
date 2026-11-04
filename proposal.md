@@ -12,7 +12,7 @@ https://www.uspto.gov/ip-policy/economic-research/research-datasets/patent-exami
 # quality indicators:
 
 Need at least six quality indicators
-	- time to disposal
+	- days to disposal
     - number of actions
     - number of citations
     - number of NPL citations
@@ -32,4 +32,10 @@ Need at least six quality indicators
 	- write transforms to create derived columns, with APP_ID as primary key:
 		- int_primaryindependent_claimstats.py  (DONE)
 		- int_count_citations.py  (DONE)
-		- int_daystodisposal_appdata.py 
+		- int_daystodisposal_appdata.py (DONE)
+	- write the following functions:
+		- count_rows(df) — establish the starting population.
+		- remove_null(df, key) — test by removing records with missing days_to_disposal.
+		- print(count_rows) - run test to see how many removes
+		- remove_negative(df, key) - test by removing records with negative days_to_disposal
+		- print(count_rows) - run test to see how many removes

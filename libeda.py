@@ -1,12 +1,9 @@
-from pathlib import Path
+import pandas as pd
 
-def list_datasets(directories):
-    datasets = []
+def lookup(
+    df: pd.DataFrame,
+    key: str,
+    value
+) -> pd.DataFrame:
 
-    for directory in directories:
-        datasets.extend(Path(directory).glob("*.csv"))
-
-    datasets = sorted(f for f in datasets if f.is_file())
-
-    for i, dataset in enumerate(datasets, start=1):
-        print(f"{i}. {dataset}")
+    return df[df[key] == value].copy()
