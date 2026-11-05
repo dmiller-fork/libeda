@@ -9,6 +9,10 @@ the goal is to find situations where the allowance rate metrics are roughly the 
 Datasets are available here:
 https://www.uspto.gov/ip-policy/economic-research/research-datasets/patent-examination-research-dataset-public-pair
 
+# organization
+	- build/ scripts of transforms that create tables, 
+	- libeda.py class Transforms generally transforms dataframs into views
+
 # quality indicators:
 
 Need at least six quality indicators
@@ -34,8 +38,8 @@ Need at least six quality indicators
 		- int_count_citations.py  (DONE)
 		- int_daystodisposal_appdata.py (DONE)
 	- write the following functions:
-		- count_rows(df) — establish the starting population.
-		- remove_null(df, key) — test by removing records with missing days_to_disposal.
-		- print(count_rows) - run test to see how many removes
-		- remove_negative(df, key) - test by removing records with negative days_to_disposal
-		- print(count_rows) - run test to see how many removes
+		- count_rows(df) — establish the starting population. (Done)
+		- remove_null(df, key) —  (Done)
+		- remove_negative(df, key) - (Done)
+	- write a join function:
+		- join(pd1, key1, pd2, key2)

@@ -10,7 +10,7 @@ RAW_DIR = DATA_DIR / "raw"
 STAGED_DIR = DATA_DIR / "staged"
 DERIVED_DIR = DATA_DIR / "derived"
 
-from libeda import lookup
+from libeda import Transform
 
 if __name__ == "__main__":
 	
@@ -26,10 +26,10 @@ if __name__ == "__main__":
 
 	print(app_id in appdata["application_number"].values)
 	print(app_id in daystodisposal["application_number"].values)
-	print(lookup(appdata, "application_number", app_id))
-	print(lookup(daystodisposal, "application_number", app_id))
+	print(Transform.lookup(appdata, "application_number", app_id))
+	print(Transform.lookup(daystodisposal, "application_number", app_id))
 	print(
-		lookup(appdata, "application_number", app_id)[
+		Transform.lookup(appdata, "application_number", app_id)[
 			["application_number", "earliest_pgpub_number", "filing_date",
 			 "patent_issue_date", "abandon_date"]
 		].to_string(index=False)
