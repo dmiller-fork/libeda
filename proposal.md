@@ -42,4 +42,7 @@ Need at least six quality indicators
 		- remove_null(df, key) —  (Done)
 		- remove_negative(df, key) - (Done)
 	- write a join function:
-		- join(pd1, key1, pd2, key2)
+		- join(pd1, key1, pd2, key2) - (Done)
+	- write a script that creates a table with allowance rate of the examiner that allowed application
+		- int_examinerid_appdata.py [examiner_id, issue_ct, abandon_ct, total_ct]
+		- int_allowancerate_appdata.py [application_number, allowance_rate]
