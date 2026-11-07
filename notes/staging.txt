@@ -1,0 +1,1 @@
+an interesting issue. Pandas infers numbers as floats, and a lot of the numbers such as examiner_id are actually strings, so forcing the type at staging was necessary, so the type wouldn't be changed upstream causing issues downstream.

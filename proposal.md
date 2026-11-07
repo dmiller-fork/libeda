@@ -44,5 +44,7 @@ Need at least six quality indicators
 	- write a join function:
 		- join(pd1, key1, pd2, key2) - (Done)
 	- write a script that creates a table with allowance rate of the examiner that allowed application
-		- int_examinerid_appdata.py [examiner_id, issue_ct, abandon_ct, total_ct]
+		- int_examinerid_appdata.py [examiner_id, issue_ct, abandon_ct, total_ct] (DONE)
+			- what to do when issue_ct + abandon_ct does not equal total_ct?
+			- could be pending? let's explore
 		- int_allowancerate_appdata.py [application_number, allowance_rate]

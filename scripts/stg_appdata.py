@@ -10,6 +10,11 @@ RAW_DIR = DATA_DIR / "raw"
 STAGED_DIR = DATA_DIR / "staged"
 DERIVED_DIR = DATA_DIR / "derived"
 
-df = pd.read_csv(RAW_DIR / "application_data.csv", low_memory=False)
+df = pd.read_csv(
+    RAW_DIR / "application_data.csv",
+    low_memory=False,
+    dtype={"examiner_id": "string"}
+)
+
 df.to_csv(STAGED_DIR / "stg_appdata.csv", index=False)
 
