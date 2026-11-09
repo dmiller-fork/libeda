@@ -27,16 +27,35 @@ def create_examiner_table(df: pd.DataFrame) -> pd.DataFrame:
 		.sum()
 	)
 
+if __name__ == "__main__":
 
-appdata = pd.read_csv(
-	STAGED_DIR / "stg_appdata.csv",
-	low_memory=False,
-	dtype={"examiner_id": "string"}
-)
-clean_appdata = Clean.remove_nonexclusive(appdata,"patent_issue_date", "abandon_date")
-is_valid = Analysis.validate_exclusive(clean_appdata, "patent_issue_date", "abandon_date")
-print("patent_issue_date and abandon_date are mutually exclusive: ", is_valid)
-result = create_examiner_table(clean_appdata)
-result.to_csv(DERIVED_DIR / "int_examinerid_appdata.csv", index=False)
+	appdata = pd.read_csv(
+		STAGED_DIR / "stg_appdata.csv",
+		low_memory=False,
+		dtype={"examiner_id": "string"}
+	)
+	daystodisposal = pd.read_csv(DERIVED_DIR / "int_daystodisposal_appdata.csv",
+		dtype={"application_number": str}
+	)
+	result = Transform.join(
+		daystodisposal,
+		"application_number",
+		appdata,
+		"application_number"
+	)
+	print("after join: ", Analysis.count_rows(result))
 
-print(result.describe())
+	result = Clean.remove_null(result, "days_to_disposal")
+	print("after cleaning null row_count: ", Analysis.count_rows(result))
+	result = Clean.remove_negative(result, "days_to_disposal")
+	print("after cleaning negative row_count: ", Analysis.count_rows(result))
+
+	result = Clean.remove_nonexclusive(result,"patent_issue_date", "abandon_date")
+	is_valid = Analysis.validate_exclusive(result, "patent_issue_date", "abandon_date")
+	print("patent_issue_date and abandon_date are mutually exclusive: ", is_valid)
+	result = create_examiner_table(result)
+
+	assert (result["total_ct"] == result["issue_ct"] + result["abandon_ct"]).all()
+	result.to_csv(DERIVED_DIR / "int_examinerid_appdata.csv", index=False)
+
+	print(result.describe())

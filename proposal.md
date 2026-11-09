@@ -43,8 +43,10 @@ Need at least six quality indicators
 		- remove_negative(df, key) - (Done)
 	- write a join function:
 		- join(pd1, key1, pd2, key2) - (Done)
-	- write a script that creates a table with allowance rate of the examiner that allowed application
-		- int_examinerid_appdata.py [examiner_id, issue_ct, abandon_ct, total_ct] (DONE)
-			- what to do when issue_ct + abandon_ct does not equal total_ct?
-			- could be pending? let's explore
-		- int_allowancerate_appdata.py [application_number, allowance_rate]
+	- write a script that creates a table with allowance rate of the examiner that allowed application (DONE)
+		- int_examinerid_appdata.py |examiner_id| issue_ct| abandon_ct| total_ct| (DONE)
+			- what to do when issue_ct + abandon_ct does not equal total_ct? cleaned data (DONE)
+		- int_allowancerate_appdata.py |application_number, allowance_rate|
+	- write an Analysis method that checks the correlation between days_to_disposal and allowance_rate
+	- Create a histogram of allowance rates using 10-percentage-point bins.
+	- write a script that creates a table int_allowancegroup_examinerdata.py
