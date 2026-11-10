@@ -10,16 +10,12 @@ RAW_DIR = DATA_DIR / "raw"
 STAGED_DIR = DATA_DIR / "staged"
 DERIVED_DIR = DATA_DIR / "derived"
 
-def allowance_rate(df: pd.DataFrame, examiner_df: pd.DataFrame) -> pd.DataFrame:
-	df = df.merge(
-		examiner_df[["examiner_id", "issue_ct", "total_ct"]],
+def join_allowancedata(appdata: pd.DataFrame, examinerdata: pd.DataFrame) -> pd.DataFrame:
+	return appdata.merge(
+		examinerdata[["examiner_id", "allowance_rate", "allowance_group"]],
 		on="examiner_id",
 		how="left"
-	)
-
-	return df.assign(
-		allowance_rate=df["issue_ct"] / df["total_ct"]
-	)[["application_number", "allowance_rate"]]
+	)[["application_number", "allowance_rate", "allowance_group"]]
 
 appdata = pd.read_csv(
 		STAGED_DIR / "stg_appdata.csv",
@@ -27,12 +23,12 @@ appdata = pd.read_csv(
 		dtype={"examiner_id": "string"}
 	)
 examinerdata = pd.read_csv(
-		DERIVED_DIR / "int_examinerid_appdata.csv",
+		DERIVED_DIR / "int_allowancerate_examinerdata.csv",
 		low_memory=False,
 		dtype={"examiner_id": "string"}
 	)
 assert examinerdata["examiner_id"].is_unique, "Duplicate examiner_id values detected"
-result = allowance_rate(appdata, examinerdata)
+result = join_allowancedata(appdata, examinerdata)
 result.to_csv(DERIVED_DIR / "int_allowancerate_appdata.csv", index=False)
 
 print(result["allowance_rate"].describe())

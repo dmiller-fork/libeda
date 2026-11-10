@@ -1,0 +1,17 @@
+# correlation between allowance rate and days to disposal
+
+r, p = pearsonr(
+    df["days_to_disposal"],
+    df["allowance_rate"]
+)
+
+(.venv) $: python3 correlation_test.py 
+Observations Start: 9817693
+Removed: 2730639
+Remaining: 7087054
+Pearson correlation: -0.3546
+P-value: 0.000e+00
+
+The correlation r=-0.3546 indicates a moderate negative linear association between allowance rate and days to disposal.
+
+In practical terms, applications associated with examiners having higher allowance rates tend to have shorter disposal times.

@@ -1,0 +1,3 @@
+stg_appdata			->	int_examinerid
+int_examinerid		->	int_examinerallow
+int_examinerallow 	->	int_appallow
