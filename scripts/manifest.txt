@@ -1,3 +1,7 @@
 stg_appdata			->	int_examinerid
 int_examinerid		->	int_examinerallow
 int_examinerallow 	->	int_appallow
+
+stg_appdata			-> int_disposaldata
+int_disposal_data
+int_appallow		-> mart_disposalbins

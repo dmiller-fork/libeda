@@ -48,7 +48,11 @@ class Clean:
 	@staticmethod
 	def remove_negative(df, key):
 		return df[df[key] >= 0].copy()
-	
+
+	@staticmethod
+	def remove_lessthanvalue(df, key, value):
+		return df[df[key] >= value].copy()
+
 	@staticmethod
 	def remove_nonexclusive(
 		df: pd.DataFrame,
