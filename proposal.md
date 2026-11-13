@@ -53,4 +53,7 @@ Need at least six quality indicators
 	- write a script that creates a table int_allowancegroup_examinerdata.py (DONE)
 	- create a histogram of days_to_disposal using 10 bins (SKIP)
 	- create bins of 4 year groups by issue/abandon date (DONE)
-	- I have roughly 20 groups. 1980-2016, which is 10 four year cohors, and issued/abandoned for each. So I can just get count, mean, median, standard deviation, 25th and 75th quartile for each group, and then 10 plots, with two histograms on each. Tomorrow do this just for disposal counts, but then the next day is days_to_disposal, and other quality metrics.
+	- I have roughly 20 groups. 1980-2016, which is 10 four year cohorts, and issued/abandoned for each. So I can just get count, mean, median, standard deviation, 25th and 75th quartile for each group, and then 10 plots, with two histograms on each. Tomorrow do this just for disposal counts, but then the next day is days_to_disposal, and other quality metrics. (SKIP)
+	- The initial binning shows that 2016 hadn't been fully processed by the time this dataset came out, so it should probably be dropped before correlation analysis. We want a correlation analysis between total_ct and abandoned_pct.
+	- start mean, median, standard deviation 25th, and 75th quartile for days_to_disposal
+~               

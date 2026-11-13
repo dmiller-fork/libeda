@@ -50,8 +50,8 @@ class Clean:
 		return df[df[key] >= 0].copy()
 
 	@staticmethod
-	def remove_lessthanvalue(df, key, value):
-		return df[df[key] >= value].copy()
+	def remove_outsiderange(df, key, lb, ub):
+		return df[(df[key] >= lb) & (df[key] <= ub)].copy()
 
 	@staticmethod
 	def remove_nonexclusive(

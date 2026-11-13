@@ -1,0 +1,15 @@
+ disposal_cohort  abandoned_ct  issued_ct  total_ct  issued_pct  abandoned_pct
+            1980         12236     227526    239762       94.90           5.10
+            1984         47304     317232    364536       87.02          12.98
+            1988         67086     394036    461122       85.45          14.55
+            1992         97724     446286    544010       82.04          17.96
+            1996         58096     579581    637677       90.89           9.11
+            2000         94366     732602    826968       88.59          11.41
+            2004        250423     719694    970117       74.19          25.81
+            2008        478243     872497   1350740       64.59          35.41
+            2012        464204    1234853   1699057       72.68          27.32
+            2016          2228      71539     73767       96.98           3.02
+
+Analysis population: 7,167,756
+
+The initial binning shows that 2016 hadn't been fully processed by the time this dataset came out, so it shoudl probably be dropped too. We want a correlation analysis between total_ct and abandoned_pct

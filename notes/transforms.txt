@@ -1,3 +1,33 @@
-For the first stage of the project, I've been taking the quick and dirty script files that I used to make the proposal, and structuring them in a full project format. Before a script would do the data pull, then add a column, then .describe() the result. That is fine, but for larger scope project, I want stage files with the stg_ prefix for which datasets I am using, then intermediate models wit the prefix int_ to create derived columns, and finally mart files to perform the analysis.
+# transform and cleaning
 
-I'm therefore rewriting everything in a more encapsulated form, and comparing with my previously created stats. I notices with the citation dataset that I had to add unique because sometimes citaitons were added more than once.
+The data had to be processed into bins to get usuable information. The main original dataset is appdata, which describes applications by application_number. Important columns include examiner_id, issue_date, and/or abandoned_date. My goal initial goal was to transform this data into analyzable groups of information, which required a lot of transforms and data cleaning.
+
+
+## transforms
+
+Here are the initial transforms:
+
+stg_appdata			->	int_examinerid
+int_examinerid		->	int_examinerallow
+int_examinerallow	->	int_appallow
+
+stg_appdata			-> int_disposaldata
+
+int_disposaldata
+int_appallow		-> mart_disposalbins
+mart_disposalbins	-> mart_disposalcounts
+
+For the first set of transforms, I essentially needed to get the appdata that was ordered by application number into data that was organized by examiner_id. With that transform, I could calculate allowance rate for each examiner, and then I could transform that data back into an application number based table.
+
+The second group of transforms is just combining abandon date and issue date into a single column called disposal_date. This allows for calculation of days_to_dispoal, and cohort later.
+
+The final group of transforms is joining the allowancerates with the disposal data to create bins of disposal_cohort, allowance_groups, and disposal_type.
+
+## data cleaning
+At each transformation stage records needed to be droped from the analysis. I used four methods in a Clean class that I created to clean the data. These were remove_null, remove_negative, remove_nonexclusive, and remove_outsiderange. Essentially, if a necessary field had a null value, that record was removed. If a calculated value had a negative value when the field was supposed to be positive, there was a problem with the underlying data, so that record was removed. For the disposal_date information, there needed to be data in abandoned_date or issue_date, but not both, so if those columns were not mutually exclusive for a record, that record was removed. Finally, the dataset had lots a few points of data for certain years, but an analysis of the overall data showed that most of the records were from 1980-2016, so any records with a disposal date outside those cohorts was removed.
+
+After transforming and cleaning the data at each stage, about 2.6 million rows were removed from the original dataset:
+
+Source population: 9,817,693
+Analysis population: 7,167,756
+Excluded count: 2,649,937
