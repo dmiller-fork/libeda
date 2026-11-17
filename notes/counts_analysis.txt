@@ -12,4 +12,8 @@
 
 Analysis population: 7,167,756
 
-The initial binning shows that 2016 hadn't been fully processed by the time this dataset came out, so it shoudl probably be dropped too. We want a correlation analysis between total_ct and abandoned_pct
+The initial binning shows that 2016 hadn't been fully processed by the time this dataset came out, so it should probably be dropped too. We want a correlation analysis between total_ct and abandoned_pct
+
+Just looking at the data, there are some interesting trends. The most obvious is that total_ct has been going up over the years in a seemingly linear trend until some sort of sky rocket in 2008. This may be related to the 2008 housing crises somehow, which would lead to an increase in abandonments temporarily, but the data seems to continue to go up from there so maybe not. 
+
+The other thing that is noticeable, is the two linear periods where abondonment rate went up for about 12 years, and then reset. First from 1980 to 1992, and then from 1996 to 2008. This is likely due to a policy decision around that time.

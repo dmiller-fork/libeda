@@ -53,6 +53,12 @@ class Clean:
 	def remove_outsiderange(df, key, lb, ub):
 		return df[(df[key] >= lb) & (df[key] <= ub)].copy()
 
+
+	@staticmethod
+	def remove_lowerbound(df, key, lb):
+		return df[(df[key] >= lb)].copy()
+
+
 	@staticmethod
 	def remove_nonexclusive(
 		df: pd.DataFrame,

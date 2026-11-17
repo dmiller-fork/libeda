@@ -1,0 +1,7 @@
+The data has some very clear patterns.
+
+First, days_to_disposal seems to universally get longer for issued applications as the allowance_group goes down. So issued applications in the 20% and 30% allowance groups are going to take longer to issue than applications in the 80% and 90% groups. 
+
+The second interesting trend is that days to disposal for abandoned applications seems to level off as the allowance group goes down. This means whether you get an examiner in the 60% allowance group or the 50% or the 40% allowance group, applications will be abandoned at constant number of days. In 2004–2012, the 40–60% groups are roughly 1,100–1,260 days
+
+For quality analysis, I think this suggests that applications should likely be examined for a minimum number of days before being allowed. That transition point in allowance groups, where it doesn't matter what examiner you have, the application is likely to be abandoned (if it is going to be abandoned) in a certain number of days is telling.

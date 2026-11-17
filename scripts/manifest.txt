@@ -6,4 +6,7 @@ stg_appdata			-> int_disposaldata
 int_disposal_data
 
 int_appallow		-> mart_disposalbins
-mart_disposalbins 	-> mart_disposalcounts
+mart_disposalbins 	-> mart_disposalcounts (just by cohort)
+mart_disposalbins 	-> mart_disposalcounts_byallowancegrp.csv
+
+

@@ -10,6 +10,8 @@ RAW_DIR = DATA_DIR / "raw"
 STAGED_DIR = DATA_DIR / "staged"
 DERIVED_DIR = DATA_DIR / "derived"
 
+from libeda import Clean
+
 def disposal_data(df: pd.DataFrame) -> pd.DataFrame:
 	df = df.copy()
 
@@ -42,8 +44,9 @@ def disposal_cohort(df: pd.DataFrame) -> pd.DataFrame:
 
 	return df
 
-df = pd.read_csv(STAGED_DIR / "stg_appdata.csv", low_memory=False)
+df = pd.read_csv(STAGED_DIR / "stg_appdata.csv", dtype={"application_number": "string"}, low_memory=False)
 result = disposal_data(df)
+result = Clean.remove_negative(result, "days_to_disposal")
 result = disposal_cohort(result)
 result.to_csv(DERIVED_DIR / "int_disposaldata_appdata.csv", index=False)
 

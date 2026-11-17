@@ -1,0 +1,19 @@
+## initial analysis
+
+The relative-frequency differences show a consistent pattern across the examined cohorts. At lower allowance groups, the differences are negative, meaning those groups account for a larger share of abandoned applications than issued applications. As the allowance group increases, the differences move toward zero and eventually become positive, indicating that higher allowance groups account for a larger share of issued applications.
+
+The transition from negative to positive generally occurs between the 70–79.99 and 80–89.99 groups. The 2008 and 2012 cohorts show an earlier transition, between 60–69.99 and 70–79.99. The 1980–2000 cohorts generally retain negative differences through 70–79.99, while the 2004 cohort transitions at 80–89.99.
+
+This pattern indicates a systematic difference in the distributions of issued and abandoned applications: abandoned applications are relatively more concentrated in lower allowance groups, while issued applications are relatively more concentrated in higher allowance groups. The magnitude and location of this transition vary across cohorts, suggesting that the relationship also changes over time.
+
+Importantly, this is a comparison of distribution shapes, not evidence by itself that allowance rates cause an application to be issued or abandoned.
+
+## bias
+
+What is mathematical coupling? It is the effect that occurs when one variable directly or indirectly contains the whole or part of another, and the two variables are analysed using standard correlation or regression techniques.
+
+in this analysis, the groups are binned by allowance_rate of the examiner that examined the application and the dependent variable is allowance rate. So no statistically significant results are useful at least in terms of correlation because essentially the x-variable is included in the y-variable.
+
+## what is relevant from this analysis
+
+Essentially, the main thing that is relevant is the location of the transition and how it varies across cohorts. My theory is that other fields or columns that are tested will bias one way for applications that are more likely to be abandoned because the abandoned group is to the left of the transition location, and will bias the other way for applications that are more likely to issue because they are to the right of the transition location.
