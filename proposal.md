@@ -55,5 +55,11 @@ Need at least six quality indicators
 	- create bins of 4 year groups by issue/abandon date (DONE)
 	- I have roughly 20 groups. 1980-2016, which is 10 four year cohorts, and issued/abandoned for each. So I can just get count, mean, median, standard deviation, 25th and 75th quartile for each group, and then 10 plots, with two histograms on each. Tomorrow do this just for disposal counts, but then the next day is days_to_disposal, and other quality metrics. (SKIP)
 	- The initial binning shows that 2016 hadn't been fully processed by the time this dataset came out, so it should probably be dropped before correlation analysis. We want a correlation analysis between total_ct and abandoned_pct.
-	- start mean, median, standard deviation 25th, and 75th quartile for days_to_disposal
+	- start mean, median, standard deviation 25th, and 75th quartile for days_to_disposal (DONE-ish)
+	- start mean, median, standard deviation for number of citations (DONE)
+	- likely need to include a brief section about the examination process (DONE)
+	- likely need to include a literature review
+	- number of office actions analysis
+	- length of claims analysis
+
 ~               

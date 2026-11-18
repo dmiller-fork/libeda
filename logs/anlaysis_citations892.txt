@@ -1,0 +1,9 @@
+(.venv) $: python3 mart_citations892.py 
+ disposal_cohort  citations_mean  citations_median  citations_std  total_ct
+            2008        7.295590               5.0       8.007126    181894
+            2012        9.674872               7.0      10.193429   1041675
+            2016       10.561495               7.0      11.632834     48622
+ disposal_cohort  total_apps  apps_with_citations  coverage_pct
+          2008.0      181894               181894         100.0
+          2012.0     1041675              1041675         100.0
+          2016.0       48622                48622         100.0

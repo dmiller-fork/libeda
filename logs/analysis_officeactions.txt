@@ -1,0 +1,10 @@
+(.venv) $: python3 mart_officeactions.py 
+ disposal_cohort  office_actions_mean  office_actions_median  office_actions_std  total_ct
+            2008             1.364143                    1.0            0.654479    199809
+            2012             1.871500                    1.0            1.176815   1124136
+            2016             1.973670                    2.0            1.333278     52411
+ disposal_cohort  total_apps  apps_with_office_actions  coverage_pct
+          2008.0      199809                    199809         100.0
+          2012.0     1124136                   1124136         100.0
+          2016.0       52411                     52411         100.0
+

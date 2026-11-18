@@ -1,0 +1,10 @@
+python3 mart_citations.py 
+ disposal_cohort  citations_mean  citations_median  citations_std  total_ct
+            2008       19.826543              10.0      42.418737    198868
+            2012       26.197166              13.0      62.247883   1117478
+            2016       30.130823              14.0      78.200457     52078
+ disposal_cohort  total_apps  apps_with_citations  coverage_pct
+          2008.0      198868               198868         100.0
+          2012.0     1117478              1117478         100.0
+          2016.0       52078                52078         100.0
+
