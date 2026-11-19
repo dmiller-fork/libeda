@@ -58,8 +58,16 @@ Need at least six quality indicators
 	- start mean, median, standard deviation 25th, and 75th quartile for days_to_disposal (DONE-ish)
 	- start mean, median, standard deviation for number of citations (DONE)
 	- likely need to include a brief section about the examination process (DONE)
-	- likely need to include a literature review
-	- number of office actions analysis
-	- length of claims analysis
+	- likely need to include a literature review (DONE)
+	- number of office actions analysis (DONE)
+	- length of claims analysis (SKIP)
+	- litigation validity analysis if possible (SKIP)
+	- after everything is done, I'll do a set notation analysis of applications (SKIP)
+	- problem/motivation
+	- stylize
+	- add appendix
+	- add diff analysis
+	- check against week 1 slides
+	- submit
 
 ~               

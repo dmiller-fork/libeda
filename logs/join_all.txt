@@ -1,0 +1,8 @@
+(.venv) $: python3 join_marts.py 
+Initial applications: 9,817,693
+After disposal join: 7,179,986
+Duplicate bin IDs: 0
+Duplicate disposal IDs: 0
+After citations join: 1,368,412
+After Form 892 join: 1,272,182
+After office actions join: 1,265,007
