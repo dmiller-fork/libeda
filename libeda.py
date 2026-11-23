@@ -1,4 +1,5 @@
 import pandas as pd
+from scipy.stats import pearsonr
 
 class Transform:
 	@staticmethod
@@ -25,20 +26,11 @@ class Analysis:
 	def count_rows(df):
 		"""Return the number of rows in a DataFrame."""
 		return len(df)
+
 	@staticmethod
-	def validate_exclusive(
-		df: pd.DataFrame,
-		key1: str,
-		key2: str
-	) -> bool:
-		overlap = df[key1].notna() & df[key2].notna()
-
-		if overlap.any():
-			raise ValueError(
-				f"{key1} and {key2} overlap in {overlap.sum()} rows."
-			)
-
-		return True
+	def correlation_coef(x, y):
+		"""Return Pearson correlation coefficient and p-value."""
+		return pearsonr(x, y)
 
 class Clean:
 	@staticmethod
@@ -58,7 +50,6 @@ class Clean:
 	def remove_lowerbound(df, key, lb):
 		return df[(df[key] >= lb)].copy()
 
-
 	@staticmethod
 	def remove_nonexclusive(
 		df: pd.DataFrame,
@@ -70,3 +61,18 @@ class Clean:
 		overlap = df[key1].notna() & df[key2].notna()
 
 		return df.loc[~overlap].copy()
+
+	@staticmethod
+	def validate_exclusive(
+		df: pd.DataFrame,
+		key1: str,
+		key2: str
+	) -> bool:
+		overlap = df[key1].notna() & df[key2].notna()
+
+		if overlap.any():
+			raise ValueError(
+				f"{key1} and {key2} overlap in {overlap.sum()} rows."
+			)
+
+		return True

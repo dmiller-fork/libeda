@@ -63,11 +63,13 @@ Need at least six quality indicators
 	- length of claims analysis (SKIP)
 	- litigation validity analysis if possible (SKIP)
 	- after everything is done, I'll do a set notation analysis of applications (SKIP)
-	- problem/motivation
-	- stylize
-	- add appendix
-	- add diff analysis
-	- check against week 1 slides
-	- submit
+	- problem/motivation, (DONE)
+	- stylize (DONE)
+	- add appendix (DONE)
+	- add diff analysis (DONE)
+	- check against week 1 slides (DONE)
+	- submit (DONE)
+	- write correlation analysis code, and test (DONE)
+	- run correlation against days_to_disposal at different breakpoints
 
 ~               
