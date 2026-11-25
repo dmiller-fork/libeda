@@ -16,6 +16,7 @@ bins = pd.read_csv(
 		"application_number",
 		"disposal_cohort",
 		"disposal_type",
+		"allowance_rate",
 		"allowance_group"
 	],
 	dtype={"application_number": "string"},
@@ -91,7 +92,7 @@ citations = citations[
 citation_counts = (
     citations.groupby("app_id")
     .size()
-    .reset_index(name="citation_count")
+    .reset_index(name="form892_citation_count")
     .rename(columns={"app_id": "application_number"})
 )
 

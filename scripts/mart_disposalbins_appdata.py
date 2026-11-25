@@ -16,24 +16,27 @@ def join_disposaldata(appdata, disposaldata):
             ["application_number", "disposal_type", "disposal_cohort"]
         ],
         on="application_number",
-        how="left"
+        how="inner",
+		validate="one_to_one"
     )[
         ["application_number", "disposal_type",
-         "disposal_cohort", "allowance_group"]
+         "disposal_cohort", "allowance_rate", "allowance_group"]
     ]
 
 appdata = pd.read_csv(
 		DERIVED_DIR / "int_allowancerate_appdata.csv",
-		low_memory=False
+		low_memory=False,
+		dtype={"application_number": "string"}
 	)
 disposaldata = pd.read_csv(
 		DERIVED_DIR / "int_disposaldata_appdata.csv",
-		low_memory=False
+		low_memory=False,
+		dtype={"application_number": "string"}
 	)
 result = join_disposaldata(appdata, disposaldata)
 result.to_csv(DERIVED_DIR / "mart_disposalbins_appdata.csv", index=False)
 counts = result.groupby(
-    ["disposal_type", "disposal_cohort", "allowance_group"]
+    ["disposal_type", "disposal_cohort", "allowance_rate", "allowance_group"]
 ).size().reset_index(name="count")
 
 print(counts.to_string(index=False))
